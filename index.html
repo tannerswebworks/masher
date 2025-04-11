@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masher - Timed Word Challenge</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Bouncing letters container -->
+    <div id="bouncing-letters">
+        <img src="M.png" alt="M" class="letter" id="letter-m">
+        <img src="A.png" alt="A" class="letter" id="letter-a">
+        <img src="S.png" alt="S" class="letter" id="letter-s">
+        <img src="H.png" alt="H" class="letter" id="letter-h">
+        <img src="E.png" alt="E" class="letter" id="letter-e">
+        <img src="R.png" alt="R" class="letter" id="letter-r">
+    </div>
+
+    <div class="container">
+        <h1>MASHER</h1>
+        <p class="subtitle">Type each word in two seconds</p>
+        
+        <div id="game-container">
+            <!-- Pre-game state -->
+            <div id="pre-game" class="game-state active">
+                <p>You'll have just 2 seconds to type each word.</p>
+                <p>Words will get longer as you progress!</p>
+                <button id="start-button" class="primary-button">Start</button>
+            </div>
+            
+            <!-- Active game state -->
+            <div id="active-game" class="game-state">
+                <div class="timer-container">
+                    <span id="timer-display" class="timer">2.0s</span>
+                </div>
+                <div class="target-text-container">
+                    <div id="target-text" class="target-text"></div>
+                </div>
+                <input type="text" id="user-input" placeholder="Type the word" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+                <p class="instruction">Type the word before time runs out!</p>
+            </div>
+            
+            <!-- Results state -->
+            <div id="results" class="game-state">
+                <h2>Game Over!</h2>
+                <div class="results-container">
+                    <div class="result-item">
+                        <span class="result-label">Score:</span>
+                        <span id="score-result" class="result-value">0</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Level Reached:</span>
+                        <span id="level-result" class="result-value">1</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Target Word:</span>
+                        <span id="target-word-result" class="result-value"></span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">You Typed:</span>
+                        <span id="user-typed-result" class="result-value"></span>
+                    </div>
+                </div>
+                <button id="play-again-button" class="primary-button">Play Again</button>
+            </div>
+        </div>
+        
+        <footer>
+            <p>by Tanner Martin</p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
